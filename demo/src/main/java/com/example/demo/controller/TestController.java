@@ -7,21 +7,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("test")
 public class TestController {
 
-		@GetMapping
-		public String testController(){
-			return "Hello World!( !)"; 안녕하세요
-		}
-		@GetMapping("/{id}")
-		public String testContollerWithPathVariables(@PathVariable(required =false) int 
+	@GetMapping("/test")
+	public String testController(){
+		return "Hello World!( !)"; 안녕하세요
+	}
+	@GetMapping("/test/{id}")
+	public String testContollerWithPathVariables(@PathVariable(required =false) int 
 id){
 			return "Hello World! ID "+ id; 
-		}
-		
-		@GetMapping("/Param")
-		public String testContollerRequestParam(@RequestParam(required =false) int id){
-			return "Hello World! ID param "+ id; 
-		}
+	}
+	
+	@GetMapping("/Param")
+	public String testContollerRequestParam(@RequestParam(required =false) int id){
+		return "Hello World! ID "+ id; 
+	}
 }
